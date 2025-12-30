@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>For My Tinku ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: 'Poppins', sans-serif; }
+
+.title-font { font-family: 'Playfair Display', serif; }
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: float 10s linear infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+}
+
+/* Card open animation */
+.card-closed {
+    transform: scaleY(0.05);
+    opacity: 0;
+}
+.card-open {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: all 1s ease;
+}
+</style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-pink-200 via-rose-200 to-red-200 overflow-hidden flex items-center justify-center px-3">
+
+<!-- Floating Hearts -->
+<div class="heart left-[10%]">❤️</div>
+<div class="heart left-[30%] animation-delay-[2s]">💕</div>
+<div class="heart left-[50%] animation-delay-[4s]">💖</div>
+<div class="heart left-[70%] animation-delay-[1s]">❤️</div>
+<div class="heart left-[90%] animation-delay-[3s]">💕</div>
+
+<!-- Closed Card -->
+<div id="closedCard" class="z-10 bg-white/90 rounded-3xl shadow-2xl p-6 text-center max-w-sm w-full">
+    <h1 class="title-font text-3xl text-rose-600 mb-3">
+        For My Tinku ❤️
+    </h1>
+    <p class="text-gray-600 text-sm mb-5">
+        Tap to open your surprise 💌
+    </p>
+    <button onclick="openCard()" class="bg-rose-500 text-white px-6 py-3 rounded-full shadow-lg active:scale-95 transition">
+        Open Card 💖
+    </button>
+</div>
+
+<!-- Open Card -->
+<div id="openCard" class="hidden card-closed z-20 bg-white/95 backdrop-blur rounded-3xl shadow-2xl p-6 max-w-md w-full overflow-y-auto max-h-[90vh]">
+
+    <!-- Photos -->
+    <div class="flex justify-center gap-4 mb-6">
+        <img src="me.jpg" class="w-20 h-20 rounded-full object-cover border-4 border-rose-400" alt="Me">
+        <img src="her.jpg" class="w-20 h-20 rounded-full object-cover border-4 border-rose-400" alt="Her">
+    </div>
+
+    <h2 class="title-font text-center text-3xl text-rose-600 mb-4">
+        Meri Pyaari Tinku ❤️
+    </h2>
+
+    <p class="text-gray-700 text-sm leading-relaxed whitespace-pre-line">
+Dekho meri pyaari Tinku,  
+bhale hi tumne aise aadmi se dil laga liya hai jo tumhe princess treatment ya bouquet nahi deta, lekin main tumse bahut pyaar karta hoon. Mujhe pata hai surprises plan karna aur relationship mein cheezon ko thoda spicy rakhna, saamne wale partner ko special feel karwana bahut important hota hai, aur main in cheezon mein thoda fail sa hoon.
+
+Teri irritation ko main samajhta hoon. Tu sochti hogi ki kaise ek immature aur kid-like boyfriend ke saath phans gayi hoon, mujhe aur bhi achha mil sakta tha. Aur Tinku, tu sahi sochti hai—tere ko mere se bhi achhe milenge. Lekin mujhe tere se bahut pyaar hai aur aage bhi rahega.
+
+Main jahan-jahan fail raha hoon, un har cheezon mein pass hoke rahunga aur tera dil phir se jeetunga, bhale hi uske liye kuch bhi karna pade. I love you Tinku very much ❤️❤️
+
+Please be with me always. Aur jaisi bhi tumhari narazgi hai mere se, mujhe batao, mujhe samjhao. Main tumhara haath pakad ke chalunga. Mujhe pata hai maine tumhe sahi se respect nahi kiya tha aur time bhi nahi diya, thoda selfish sa ho gaya tha main. Lekin ab se waisa nahi hoga. Main phir se efforts put karunga.
+
+Main tereko nahi khona chahta hoon. Meri kitni cheezon se tera dil tuta hai… main har cheez theek kar dunga. Mat jaana mere se door, main tere bin nahi reh sakta.
+    </p>
+
+    <div class="mt-6 text-center font-semibold text-rose-600">
+        Always yours ❤️
+    </div>
+</div>
+
+<script>
+function openCard() {
+    document.getElementById("closedCard").style.display = "none";
+    const card = document.getElementById("openCard");
+    card.classList.remove("hidden");
+    setTimeout(() => {
+        card.classList.add("card-open");
+        card.classList.remove("card-closed");
+    }, 50);
+}
+</script>
+
+</body>
+</html>
